@@ -23,22 +23,24 @@ export class AppComponent {
     }
   }
 
-  resetAll(color: string) {
+  resetAll(rocketImage, color: string) {
     this.takeOffEnabled = true
     this.height = 0
     this.color = color
+    rocketImage.style.left = 0
+    rocketImage.style.bottom = 0
   }
 
-  landShuttle(): void {
+  landShuttle(rocketImage): void {
     window.alert('The shuttle is landing. Landing gear engaged.')
     this.message = 'Space shuttle ready for takeoff!'
-    this.resetAll('green')
+    this.resetAll(rocketImage, 'green')
   }
 
-  abortMission(): void {
+  abortMission(rocketImage): void {
     if (window.confirm('Are you sure you want to abort?')) {
       this.message = 'Mission aborted: Shuttle returning home.'
-      this.resetAll('red')
+      this.resetAll(rocketImage, 'red')
     }
   }
 
@@ -51,7 +53,7 @@ export class AppComponent {
     }
   }
 
-  moveRocket(rocketImage, direction) {
+  moveRocket(rocketImage, direction: string) {
     if (direction === 'right') {
       let movement = parseInt(rocketImage.style.left) + 10 + 'px';
       rocketImage.style.left = movement;

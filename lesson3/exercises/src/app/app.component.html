@@ -33,8 +33,8 @@
       </div>
    </div>
    <div class="container-control-buttons">
-      <button (click)='takeOffCheck()' [disabled]='!takeOffEnabled'>Take Off</button>
-      <button (click)='landShuttle()'>Land</button>
-      <button (click)='abortMission()'>Abort Mission</button>
+      <button (click)='takeOffCheck()' [disabled] = '!takeOffEnabled'>Take Off</button>
+      <button (click)='landShuttle(rocket)'>Land</button>
+      <button (click)='abortMission(rocket)'>Abort Mission</button>
    </div>
 </div>
